@@ -1,0 +1,98 @@
+[
+  {
+    "id": "mediconnect",
+    "name": "MediConnect",
+    "title": "Distributed Healthcare Microservices Platform",
+    "category": "microservices",
+    "icon": "🏥",
+    "status": "deployed",
+    "statusText": "Deployed & Live",
+    "color": "#00d4ff",
+    "githubUrl": "https://github.com/mesanda456/hospital-frontend-main",
+    "skills": ["Spring Boot 3", "Java 17", "React.js", "Docker", "Microservices Architecture", "Google Gemini AI", "MySQL", "RESTful APIs"]
+  },
+  {
+    "id": "eventpulse",
+    "name": "EventPulse",
+    "title": "Interactive Floor-Plan & Event Management Platform",
+    "category": "fullstack",
+    "icon": "🎪",
+    "status": "wip",
+    "statusText": "Agile Team Project",
+    "color": "#00ff9d",
+    "githubUrl": "https://github.com/mesanda456",
+    "skills": ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "RESTful APIs", "Agile/Scrum", "Interactive Maps"]
+  },
+  {
+    "id": "tea-leaf",
+    "name": "Tea Leaf Quality Gradifier",
+    "title": "AI Vision Quality Assessment System",
+    "category": "ai-vision",
+    "icon": "🍃",
+    "status": "deployed",
+    "statusText": "AI Engine",
+    "color": "#00ff9d",
+    "githubUrl": "https://github.com/mesanda456/Tea-Leaf-Quality-Gradifier",
+    "skills": ["TypeScript", "Python", "Machine Learning", "Computer Vision", "Deep Learning", "Image Processing"]
+  },
+  {
+    "id": "vesak-light",
+    "name": "Vesak Smart Light Controller",
+    "title": "ESP8266 WiFi Multi-Channel Lighting Controller",
+    "category": "iot-robotics",
+    "icon": "🪔",
+    "status": "hardware",
+    "statusText": "IoT Hardware",
+    "color": "#ffb703",
+    "githubUrl": "https://github.com/mesanda456/using-ESP8266-and-relay-module-5W-bulb-patterns",
+    "skills": ["ESP8266", "Embedded C++", "IoT", "Arduino", "Hardware Interfacing", "Relay Modules", "WebSockets/HTTP"]
+  },
+  {
+    "id": "medicine-robot",
+    "name": "Autonomous Medicine Delivery Robot",
+    "title": "Hospital Ward Transit & Dispensing Rover",
+    "category": "iot-robotics",
+    "icon": "🤖",
+    "status": "hardware",
+    "statusText": "Robotics Hardware",
+    "color": "#9d4edd",
+    "githubUrl": "https://github.com/mesanda456/Medicine-Delivery-Robot",
+    "skills": ["Arduino", "Embedded C++", "Robotics", "Sensor Fusion", "Ultrasonic Sensors", "RTC Modules", "Hardware Prototyping"]
+  },
+  {
+    "id": "lingua-flip",
+    "name": "lingua-flip",
+    "title": "Cross-Platform Flashcard App with SM-2 Spaced Repetition",
+    "category": "mobile",
+    "icon": "🃏",
+    "status": "wip",
+    "statusText": "In Development",
+    "color": "#00d4ff",
+    "githubUrl": "https://github.com/mesanda456",
+    "skills": ["Flutter", "Dart", "Riverpod", "Hive NoSQL", "SuperMemo SM-2 Algorithm", "fl_chart", "Mobile UI/UX"]
+  },
+  {
+    "id": "finance-tracker",
+    "name": "Multi-Database Finance Tracker",
+    "title": "Dual-Engine Personal Wealth Ledger",
+    "category": "fullstack",
+    "icon": "💰",
+    "status": "deployed",
+    "statusText": "Completed",
+    "color": "#ffb703",
+    "githubUrl": "https://github.com/mesanda456/finance-tracker-frontend-master",
+    "skills": ["Java", "Spring Boot", "React.js", "SQLite", "Oracle Database", "SQL", "RESTful APIs", "Financial Analytics"]
+  },
+  {
+    "id": "pizzamania",
+    "name": "PizzaMania",
+    "title": "Native Android Food Ordering Application",
+    "category": "mobile",
+    "icon": "🍕",
+    "status": "deployed",
+    "statusText": "Completed",
+    "color": "#ff4d6d",
+    "githubUrl": "https://github.com/mesanda456/PizzaMania",
+    "skills": ["Android SDK", "Java", "XML Layouts", "SQLite", "Mobile UX", "Android Studio"]
+  }
+]

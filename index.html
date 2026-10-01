@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Launchpad — Mesanda Sethumika</title>
+  <meta name="description" content="Lazy 1-Click LinkedIn Projects & Posts Manager for Mesanda Sethumika. Add your GitHub projects to your LinkedIn profile and share high-engagement posts in seconds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation / Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="branding">
+        <div class="brand-avatar">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+        <div class="brand-meta">
+          <div class="brand-title">
+            <h1>LinkedIn Project & Post Launchpad</h1>
+            <span class="badge-lazy"><i class="fa-solid fa-bolt"></i> Lazy 1-Click Mode</span>
+          </div>
+          <p class="brand-sub">Curated for <strong>Mesanda Sethumika</strong> • Syncing GitHub Repositories to LinkedIn</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <a href="https://www.linkedin.com/in/mesanda-sethumika-943344353/details/projects/" target="_blank" class="btn btn-linkedin" id="openLinkedinProjectsBtn">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>Open LinkedIn Projects</span>
+        </a>
+        <a href="https://www.linkedin.com/feed/?shareActive=true" target="_blank" class="btn btn-outline" id="openFeedBtn">
+          <i class="fa-solid fa-feather-pointed"></i>
+          <span>New LinkedIn Post</span>
+        </a>
+        <button class="btn btn-accent" id="copyAllMasterBtn">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <span>Copy All Projects (Master File)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <!-- Stat Bar & Quick Guide -->
+    <section class="quick-banner">
+      <div class="banner-card">
+        <div class="banner-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="banner-info">
+          <h3>How to use this (Zero Effort)</h3>
+          <p>
+            1. Click <strong>"Open LinkedIn to Add"</strong> on any project.<br>
+            2. Click <strong>"Copy Profile Entry"</strong> and paste into LinkedIn's form.<br>
+            3. Click <strong>"Post to LinkedIn"</strong> to publish a viral showcase post!
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-pill">
+          <span class="stat-num" id="statProjectCount">8</span>
+          <span class="stat-label">Showcase Projects</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num" id="statPostCount">8</span>
+          <span class="stat-label">Viral Post Drafts</span>
+        </div>
+        <div class="stat-pill highlight">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Ready to Ship</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter & Search Toolbar -->
+    <section class="toolbar-section">
+      <div class="filter-pills" id="categoryFilters">
+        <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+        <button class="filter-btn" data-filter="microservices"><i class="fa-solid fa-server"></i> Microservices & Cloud</button>
+        <button class="filter-btn" data-filter="fullstack"><i class="fa-solid fa-layer-group"></i> Full-Stack (MERN/Java)</button>
+        <button class="filter-btn" data-filter="ai-vision"><i class="fa-solid fa-brain"></i> AI & Computer Vision</button>
+        <button class="filter-btn" data-filter="iot-robotics"><i class="fa-solid fa-microchip"></i> IoT & Robotics</button>
+        <button class="filter-btn" data-filter="mobile"><i class="fa-solid fa-mobile-screen"></i> Mobile (Flutter/Android)</button>
+      </div>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search by name, tech stack (e.g., Spring Boot, React, ESP8266)...">
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-grid" id="projectsContainer">
+      <!-- Dynamic Project Cards Rendered by app.js -->
+    </section>
+  </main>
+
+  <!-- Modal for Full Text / Customization -->
+  <div class="modal-backdrop" id="previewModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle">Project Title</h3>
+        <button class="modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-tabs">
+          <button class="modal-tab active" data-tab="profile">LinkedIn Profile Entry</button>
+          <button class="modal-tab" data-tab="post">LinkedIn Post Draft</button>
+        </div>
+        <div class="tab-content" id="modalProfileContent">
+          <div class="input-group">
+            <label>Project Title</label>
+            <input type="text" id="modalProjectName" readonly>
+          </div>
+          <div class="input-group">
+            <label>Skills to Tag on LinkedIn</label>
+            <input type="text" id="modalSkills" readonly>
+          </div>
+          <div class="input-group">
+            <label>Description (Formatted for Profile)</label>
+            <textarea id="modalDescription" rows="8" readonly></textarea>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-accent" id="modalCopyProfileBtn"><i class="fa-solid fa-copy"></i> Copy Profile Entry</button>
+            <a href="https://www.linkedin.com/in/mesanda-sethumika-943344353/details/projects/" target="_blank" class="btn btn-linkedin"><i class="fa-brands fa-linkedin"></i> Open LinkedIn Add Modal</a>
+          </div>
+        </div>
+        <div class="tab-content hidden" id="modalPostContent">
+          <div class="input-group">
+            <label>Ready-to-Publish Post</label>
+            <textarea id="modalPostText" rows="12" readonly></textarea>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-accent" id="modalCopyPostBtn"><i class="fa-solid fa-copy"></i> Copy Post</button>
+            <button class="btn btn-linkedin" id="modalLaunchPostBtn"><i class="fa-solid fa-paper-plane"></i> Copy & Open LinkedIn Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-text" id="toastMessage">Copied to clipboard!</div>
+  </div>
+
+  <footer class="app-footer">
+    <p>Built for <strong>Mesanda Sethumika</strong> • 100% Client-Side & Local • Ready to Accelerate Your Career 🚀</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
